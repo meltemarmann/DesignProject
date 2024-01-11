@@ -1,0 +1,26 @@
+/*********************************************
+ * OPL 22.1.0.0 Data
+ * Author: MeltemArman
+ * Creation Date: 6 Mar 2023 at 10:57:12
+ *********************************************/
+SheetConnection sheet_tuketim("Tuketim.xlsx");
+D from SheetRead(sheet_tuketim,"Tuketim!B2:B8762");
+
+SheetConnection sheet_uretim("Uretim.xlsx");
+g_pv from SheetRead(sheet_uretim,"DGYR_GES!F2:F8762");
+g_w from SheetRead(sheet_uretim,"DGYR_RES!F2:F8762");
+
+SheetConnection sheet_yenilenebilir("YenilenebilirKaynaklar.xlsx");
+y from SheetRead(sheet_yenilenebilir,"dt!C2:C8762");
+
+SheetConnection sheet_result("Sonuclar_Yillik_Ruzgar_Gunes_DigerYenilenebilir.xlsx");
+g_pv to SheetWrite(sheet_result,"DGYR_Sonuc!E2:E8762");
+g_w to SheetWrite(sheet_result,"DGYR_Sonuc!F2:F8762");
+y to SheetWrite(sheet_result,"DGYR_Sonuc!J2:J8762");
+D to SheetWrite(sheet_result,"DGYR_Sonuc!G2:G8762");
+S to SheetWrite(sheet_result, "DGYR_Sonuc!B2:B8762");
+X_ch to SheetWrite(sheet_result, "DGYR_Sonuc!C2:C8762");
+X_dis to SheetWrite(sheet_result, "DGYR_Sonuc!D2:D8762");
+c_b to SheetWrite(sheet_result, "DGYR_Sonuc!R9");
+M_pv to SheetWrite(sheet_result, "DGYR_Sonuc!R10");
+M_w to SheetWrite(sheet_result, "DGYR_Sonuc!R11");

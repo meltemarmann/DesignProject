@@ -1,0 +1,22 @@
+/*********************************************
+ * OPL 22.1.0.0 Data
+ * Author: MeltemArman
+ * Creation Date: 19 Nis 2023 at 11:51:37
+ *********************************************/
+SheetConnection sheet_tuketim("TUKETIM_SEHIR.xlsx");
+D from SheetRead(sheet_tuketim,"Tuketim!B2:B8762");
+
+SheetConnection sheet_uretim("URETIM_SEHIR.xlsx");
+g_pv from SheetRead(sheet_uretim,"GES!Q2:Q8762");
+g_w from SheetRead(sheet_uretim,"RES!Q2:Q8762");
+
+SheetConnection sheet_result("Sonuclar_Yillik_SehirBazinda_Ruzgar_Gunes.xlsx");
+g_pv to SheetWrite(sheet_result,"KONYA!E2:E8762");
+g_w to SheetWrite(sheet_result,"KONYA!F2:F8762");
+D to SheetWrite(sheet_result,"KONYA!G2:G8762");
+S to SheetWrite(sheet_result, "KONYA!B2:B8762");
+X_ch to SheetWrite(sheet_result, "KONYA!C2:C8762");
+X_dis to SheetWrite(sheet_result, "KONYA!D2:D8762");
+c_b to SheetWrite(sheet_result, "KONYA!Q9");
+M_pv to SheetWrite(sheet_result, "KONYA!Q10");
+M_w to SheetWrite(sheet_result, "KONYA!Q11");
